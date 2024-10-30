@@ -7,10 +7,15 @@ function App() {
     "Vezbaj PHP",
     "Vezbaj Python",
   ]);
+
+  function handleAddTodos(newTodo){
+    const newTodoList = [...todos, newTodo]
+    setTodos(newTodoList)
+  }
   return (
     <>
       <>
-        <TodoInput setTodos={setTodos} />
+        <TodoInput handleAddTodos={handleAddTodos} />
         <TodoList todos={todos} />
       </>
     </>
